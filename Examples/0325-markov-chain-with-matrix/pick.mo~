@@ -1,0 +1,23 @@
+function  pick
+input Real z;
+input Real[:] p;   //7 array of size size(p, 1)
+output Integer w;
+
+protected
+Integer i;
+Real y;
+
+algorithm
+
+
+i := 1;
+y := p[i];
+while ((z > y) and (i < size(p, 1))) loop
+i := i + 1;
+y := y + p[i];
+end while;
+
+w := i;
+
+end pick;
+

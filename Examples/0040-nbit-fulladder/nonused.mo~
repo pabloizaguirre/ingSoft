@@ -1,0 +1,36 @@
+class Environment
+
+parameter Real T = 1;
+
+SysParameters p;
+
+OutputBoolean a[p.n];
+OutputBoolean b[p.n];
+OutputBoolean carry_in;
+
+initial equation
+for i in 1:p.n loop
+   a[i] = true;
+   b[i] = true;
+end for;
+
+carry_in = true;
+
+algorithm
+
+
+when sample(0, T) then
+
+for j in 0:1 loop
+for k in 0:(2^((p.n)) - 1) loop
+    for h in 0:(2^((p.n)) - 1) loop
+        a := int2bool(integer(k));
+	b := int2bool(integer(h));
+	carry_in :=  if (j == 0) then false else true;
+    end for; // h                                                                            
+end for; // k                                                                               
+end for;  // j
+
+end when;
+
+end Environment;

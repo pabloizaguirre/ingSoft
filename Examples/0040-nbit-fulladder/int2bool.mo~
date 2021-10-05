@@ -1,0 +1,39 @@
+
+function  int2bool
+input Integer k;
+input Integer n;
+output Boolean a[n];
+output Boolean b[n];
+output Boolean c;
+
+algorithm
+
+if (rem(k, 2) < 1)
+then
+ c := false;
+else
+ c := true;	   
+end if;
+	   
+       for i in 1:n loop
+           if (rem(k,(2^(i+1))) < (2^(i)))
+	   then
+	      a[i] := false;
+	   else
+	      a[i] := true;	   
+	   end if;
+      end for;
+
+       for i in 1:n loop
+           if (rem(k,(2^(i+1+size(a,1)))) < (2^(i+size(a,1))))
+	   then
+	      b[i] := false;
+	   else
+	      b[i] := true;	   
+	   end if;
+      end for;
+
+
+
+end int2bool;
+

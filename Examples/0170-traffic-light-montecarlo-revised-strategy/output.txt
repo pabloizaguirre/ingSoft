@@ -1,0 +1,23 @@
+Outcomes
+
+y[0] = 1.0: FAIL with ArrivalDelay = 8.3
+y[1] = 0.0: PASS with ArrivalDelay = 14.4
+y[2] = 0.0: PASS with ArrivalDelay = 0.0
+y[3] = 0.0: PASS with ArrivalDelay = 6.0
+y[4] = 0.0: PASS with ArrivalDelay = 2.9
+y[5] = 0.0: PASS with ArrivalDelay = 1.8
+y[6] = 0.0: PASS with ArrivalDelay = 3.7
+y[7] = 0.0: PASS with ArrivalDelay = 6.9
+y[8] = 1.0: FAIL with ArrivalDelay = 7.9
+y[9] = 0.0: PASS with ArrivalDelay = 10.7
+y[10] = 1.0: FAIL with ArrivalDelay = 8.3
+y[11] = 0.0: PASS with ArrivalDelay = 13.7
+y[12] = 0.0: PASS with ArrivalDelay = 4.0
+y[13] = 0.0: PASS with ArrivalDelay = 17.5
+y[14] = 0.0: PASS with ArrivalDelay = 0.5
+y[15] = 0.0: PASS with ArrivalDelay = 13.4
+y[16] = 1.0: FAIL with ArrivalDelay = 8.3
+y[17] = 0.0: PASS with ArrivalDelay = 11.1
+y[18] = 0.0: PASS with ArrivalDelay = 2.8
+y[19] = 0.0: PASS with ArrivalDelay = 3.9
+y[20] = 0.0: PASS with ArrivalDelay = 16.0

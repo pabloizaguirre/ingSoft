@@ -1,0 +1,15 @@
+
+type TrafficLightSignal = enumeration(
+green "Go",
+orange "PrepareToStop",
+red "Stop");
+
+
+type CarState = enumeration(
+before "About to cross",
+crossing "Crossing",
+past "Crossing completed");
+
+type Driver = enumeration(
+go  "move car ahead",
+stop "stop car");

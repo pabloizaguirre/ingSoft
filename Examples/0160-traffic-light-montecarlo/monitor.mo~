@@ -1,0 +1,28 @@
+
+class Monitor
+
+input TrafficLightSignal x;  
+input CarState z;
+output Boolean y;
+
+Boolean z;
+
+initial equation
+y = false;
+z = false;
+
+equation
+
+z = (x == TrafficLightSignal.red) and (z == CarState.crossing);
+
+algorithm
+
+when edge(z) then
+y := true;
+end when;
+
+
+
+
+
+end Monitor;

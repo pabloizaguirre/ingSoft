@@ -1,0 +1,76 @@
+import os
+import sys
+import math
+import numpy as np
+
+from OMPython import OMCSessionZMQ
+
+
+# seed random number generator
+np.random.seed(1)
+
+
+num_pass = 0
+num_fail = 0
+
+y = {}
+
+omc = OMCSessionZMQ()
+omc.sendExpression("getVersion()")
+omc.sendExpression("cd()")
+omc.sendExpression("loadModel(Modelica)")
+omc.sendExpression("getErrorString()")
+
+omc.sendExpression("loadFile(\"types.mo\")")
+omc.sendExpression("getErrorString()")
+
+omc.sendExpression("loadFile(\"car.mo\")")
+omc.sendExpression("getErrorString()")
+
+
+omc.sendExpression("loadFile(\"ctr.mo\")")
+omc.sendExpression("getErrorString()")
+
+omc.sendExpression("loadFile(\"monitor.mo\")")
+omc.sendExpression("getErrorString()")
+
+omc.sendExpression("loadFile(\"system.mo\")")
+omc.sendExpression("getErrorString()")
+
+omc.sendExpression("buildModel(System, stopTime=50)")
+omc.sendExpression("getErrorString()")
+
+with open ("output.txt", 'wt') as f:
+        f.write("Outcomes"+"\n\n")
+
+for i in range(100):
+	print "Iterazione",i
+	with open ("modelica_rand.in", 'w') as f:
+		rand1 = math.trunc(np.random.uniform(0,20)*10.0)/10.0
+		f.write("q.ArrivalDelay="+str(rand1)+"\n")
+
+	omc.sendExpression("system(\"rm -f System_res.mat\")")
+	omc.sendExpression("system(\"./System -overrideFile=modelica_rand.in\")")
+#	omc.sendExpression("simulate(System, stopTime=50, simflags=\"-overrideFile=modelica_rand.in\")")
+	omc.sendExpression("getErrorString()")
+
+	y[i] = omc.sendExpression("val(m.y, 50, \"System_res.mat\")")
+
+        with open ("output.txt", 'a') as f:
+                if (y[i] == 0):
+                        num_pass = num_pass + 1.0
+                        f.write("y["+str(i)+"] = "+str(y[i])+": PASS with ArrivalDelay = "+str(rand1)+"\n")
+                else:
+                        num_fail = num_fail + 1.0
+                        f.write("y["+str(i)+"] = "+str(y[i])+": FAIL with ArrivalDelay = "+str(rand1)+"\n")
+
+print y
+
+print ("num pass = ", num_pass)
+print ("num fail = ", num_fail)
+print ("total tests = ",  num_pass + num_fail)
+print ("pass prob = ", num_pass/(num_pass + num_fail))
+print ("fail prob = ", num_fail/(num_pass + num_fail))
+
+
+

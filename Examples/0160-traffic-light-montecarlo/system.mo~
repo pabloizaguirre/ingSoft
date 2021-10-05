@@ -1,0 +1,14 @@
+class System
+
+
+TrafficLight p;
+Car q;
+Ctr k;
+
+
+equation
+
+connect(k.y, p.x);
+connect(q.u, k.u);
+
+end System;

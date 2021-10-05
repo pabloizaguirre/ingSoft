@@ -1,0 +1,12 @@
+function  next
+input Integer x;
+input Integer u;
+output Integer y;
+
+
+algorithm
+
+y := mod(x + u, mck.N);
+
+end next;
+

@@ -1,0 +1,4 @@
+Outcomes
+
+y[36] = 1.0: FAIL with ArrivalDelay = 7.2; k.T=2.0
+y[36] = 1.0: FAIL with ArrivalDelay = 7.2; k.T=1.9

@@ -1,0 +1,35 @@
+
+
+model System
+
+import Rng = MLibrary.Random.Generator ;
+
+Controller ctr;
+FIFO fifo;
+Monitor monitor;
+
+Rng.generator1024
+r_in(samplePeriod=0.1, globalSeed = 156, localSeed = 1689);
+
+
+Real p_in, p_out;
+
+equation
+
+p_in = 3.5 + 2.0*r_in.r1024;
+
+//p_in = 3.5 + 0.5*sin(2*3.14*10*time);
+
+// p_out = 0.5 + 0.1*sin(2*3.14*20*time);
+
+p_out = 3.5;
+
+
+
+fifo.p_out = p_out;
+fifo.p_in = p_in;
+fifo.x = ctr.x;
+fifo.u = ctr.u;
+monitor.x = fifo.x;
+
+end System;

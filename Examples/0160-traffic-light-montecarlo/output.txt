@@ -1,0 +1,7 @@
+Outcomes
+
+y[0] = 0.0: PASS with ArrivalDelay = 8.3
+y[1] = 0.0: PASS with ArrivalDelay = 14.4
+y[2] = 0.0: PASS with ArrivalDelay = 0.0
+y[3] = 0.0: PASS with ArrivalDelay = 6.0
+y[4] = 0.0: PASS with ArrivalDelay = 2.9
