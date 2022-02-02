@@ -1,9 +1,9 @@
 
 record Prm
 
-parameter Integer ID = 1234567;  //  Sostituire qui la vostra matricola
+parameter Integer ID = 1991519;  //  Sostituire qui la vostra matricola
 
-parameter Integer ID = MyMagiNumber = 1 + mod(ID, 173);
+parameter Integer yMagicNumber = 1 + mod(ID, 173);
 
 parameter Integer N = 5;   // numero sensori
 

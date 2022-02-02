@@ -6,8 +6,14 @@ getErrorString();
  
 loadFile("env.mo");
 getErrorString();
- 
-loadFile("monitor1.mo");
+
+loadFile("fifoc2s.mo");
+getErrorString();
+
+loadFile("fifos2c.mo");
+getErrorString();
+
+loadFile("mockup.mo");
 getErrorString();
  
 loadFile("parameters.mo");
