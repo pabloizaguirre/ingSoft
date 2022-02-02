@@ -6,7 +6,7 @@ output Real p;   // probability of staying in state (Loop Probability)
 
 algorithm
 
-// sjt = T/(1 - p)  thus T/sjt = 1 - p  thus p = 1 -  T/sjt
+// sjt(i,k)/T = 1/(1-p) => p = 1 - t/sjt(i,k)
 
 p := 1 -  T/sjt ;
 

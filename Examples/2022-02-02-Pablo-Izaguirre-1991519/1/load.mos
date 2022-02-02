@@ -6,6 +6,21 @@ getErrorString();
  
 loadFile("dtmc.mo");
 getErrorString();
+
+loadFile("loopprob.mo");
+getErrorString();
+
+loadFile("next.mo");
+getErrorString();
+
+loadFile("P.mo");
+getErrorString();
+
+loadFile("Parameters.mo");
+getErrorString();
+
+loadFile("Probe.mo");
+getErrorString();
  
 loadFile("monitor.mo");
 getErrorString();

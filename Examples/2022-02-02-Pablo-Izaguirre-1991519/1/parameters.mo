@@ -3,7 +3,7 @@ record Prm
 
 parameter Integer ID = 1991519;  //  Sostituire qui la vostra matricola
 
-parameter Integer ID = MyMagiNumber = 1 + mod(ID, 173);  
+parameter Integer MyMagicNumber = 1 + mod(ID, 173);  
 
 parameter Integer N = 10;  // numero di fasi del ciclo di sviluppo
 
